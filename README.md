@@ -12,10 +12,21 @@ const string GAME_ID = "YOUR_GAME_ID";
 SW.SWConfig swConfig = new SW.SWConfig(API_KEY, GAME_ID);
 SW sw = new SW(swConfig, GetTree().Root );
 
-sw.Register("my_user", "my_password", "my_password", )
+sw.Register("my_user", "my_password", successListener: _OnRegisterSuccess);
 
 
-void _OnRegisterSuccess
+void _OnRegisterSuccess(Dictionary dict)
+{
+  string playerName = dict["player_name"];
+  GD.Print($"Player {playerName} successfully registered!")
+
+  sw.Login("my_user", "my_password", successListener: _OnLoginSuccess);
+}
+
+void _OnLoginSuccess(Dictionary dict)
+{
+  GD.Print($"Player successfully logged in!")
+}
 
 ```
 
