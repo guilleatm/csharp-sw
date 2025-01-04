@@ -1,6 +1,6 @@
 # CSharp Silent Wolf
 
-This is a simple implementation of the Silent Wolf plugin for C#.
+This is a simple implementation of the [Silent Wolf](https://silentwolf.com/features) plugin for C#.
 
 ## How to use
 
