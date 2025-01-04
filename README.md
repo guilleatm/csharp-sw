@@ -4,10 +4,11 @@ This is a simple implementation of the [Silent Wolf](https://silentwolf.com/feat
 
 ## Quickstart
 
-Paste [this `SWExample` class](example/SWExample.cs) into your project. Set your `API_KEY` and your `GAME_ID` variables and don't forget to add the script to a Node.
+Paste [this `SWExample` class](example/SWExample.cs) into your project. Set your `API_KEY` and `GAME_ID` variables and don't forget to add the script to a Node.
 It should register and login a player.
 
 > Take into account that the second time you run the code, the player should already exist so registration will not complete. You will see something like: `ERROR: This player name already exists. Please select another name.`
+>
 > You can run the login instead.
 
 ## How to use
@@ -28,15 +29,15 @@ sw.Register(user, password, successListener: _OnRegisterSuccess);
 
 void _OnRegisterSuccess(Dictionary dict)
 {
-	string playerName = dict["player_name"].AsString();
-	GD.Print($"Player {playerName} successfully registered!");
+    string playerName = dict["player_name"].AsString();
+    GD.Print($"Player {playerName} successfully registered!");
 
-	sw.Login(user, password, successListener: _OnLoginSuccess);
+    sw.Login(user, password, successListener: _OnLoginSuccess);
 }
 
 void _OnLoginSuccess(Dictionary dict)
 {
-	GD.Print($"Player successfully logged in!");
+    GD.Print($"Player successfully logged in!");
 }
 
 ```
